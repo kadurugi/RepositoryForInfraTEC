@@ -1,0 +1,23 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure(2) do |config|
+    config.vm.box = "centos7"
+    config.vm.box_check_update = false
+
+  config.vm.define :srv0 do |srv|
+    srv.vm.hostname="srv0"
+    srv.vm.network :"private_network", ip: "192.168.33.10"
+  end
+
+  config.vm.define :srv1 do |srv|
+    srv.vm.hostname="srv1"
+    srv.vm.network :"private_network", ip: "192.168.33.11"
+  end
+
+  config.vm.define :srv2 do |srv|
+    srv.vm.hostname="srv2"
+    srv.vm.network :"private_network", ip: "192.168.33.12"
+  end
+
+end
